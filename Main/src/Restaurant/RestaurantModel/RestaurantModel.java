@@ -1,4 +1,4 @@
 package Restaurant.RestaurantModel;
 
-public class RestauantModel {
+public class RestaurantModel {
 }
