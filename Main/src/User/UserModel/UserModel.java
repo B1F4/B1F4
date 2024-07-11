@@ -3,26 +3,16 @@ package User.UserModel;
 public class UserModel {
 
     // 실습때 USER
-    private int id;
-    private String nickname;
-    private String username;
+    private String nickname; // nickname
+    private String username; // id
     private String password;
     private String address;
 
-    public UserModel(int id, String nickname, String username, String password, String address) {
-        this.id = id;
+    public UserModel(String nickname, String username, String password, String address) {
         this.nickname = nickname;
         this.username = username;
         this.password = password;
         this.address = address;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNickname() {
