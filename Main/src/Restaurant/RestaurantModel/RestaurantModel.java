@@ -7,6 +7,14 @@ public class RestaurantModel {
     private String location;
     private String phoneNum;
 
+    public RestaurantModel(int id, String restaurantName, String category, String location, String phoneNum) {
+        this.id = id;
+        this.restaurantName = restaurantName;
+        this.category = category;
+        this.location = location;
+        this.phoneNum = phoneNum;
+    }
+
     public int getId() {
         return id;
     }
