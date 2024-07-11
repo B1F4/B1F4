@@ -2,6 +2,7 @@ package Order.OrderRepository;
 
 import Order.OrderModel.OrderModel;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class OrderRepository  {
@@ -16,7 +17,7 @@ public class OrderRepository  {
         db.put(id,orderModel);
     }
 
-    public Map<Integer, OrderModel> getDb() {
-        return db;
+    public void delete(){
+        this.db=new HashMap<>();
     }
 }
