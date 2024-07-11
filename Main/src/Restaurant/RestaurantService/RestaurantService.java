@@ -1,4 +1,33 @@
 package Restaurant.RestaurantService;
 
+import Restaurant.RestaurantModel.RestaurantModel;
+import Restaurant.RestaurantRepository.RestaurantRepository;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class RestaurantService {
+    private RestaurantRepository restaurantRepo;
+
+    public RestaurantService(RestaurantRepository restaurantRepo) {
+        this.restaurantRepo = restaurantRepo;
+    }
+
+    public ArrayList<String> getRestaurants(String category) {
+        ArrayList<String> filteredRestaurants = new ArrayList<>();
+
+        for (RestaurantModel restaurant : restaurantRepo.getRestaurantList()) {
+            if (restaurant.getCategory().equalsIgnoreCase(category)) {
+                String restaurantName = restaurant.getRestaurantName();
+                filteredRestaurants.add(restaurantName);
+            }
+        }
+        return filteredRestaurants;
+    }
+    
+    public void printRestaurantList(List<RestaurantModel> restaurantList) {
+        for (RestaurantModel restaurant : restaurantList) {
+            System.out.println(restaurant.getRestaurantName());
+        }
+    }
 }
