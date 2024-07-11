@@ -13,18 +13,17 @@ public class RestaurantService {
         this.restaurantRepo = restaurantRepo;
     }
 
-    public ArrayList<String> getRestaurants(String category) {
-        ArrayList<String> filteredRestaurants = new ArrayList<>();
+    public ArrayList<RestaurantModel> getRestaurants(String category) {
+        ArrayList<RestaurantModel> filteredRestaurants = new ArrayList<>();
 
         for (RestaurantModel restaurant : restaurantRepo.getRestaurantList()) {
             if (restaurant.getCategory().equalsIgnoreCase(category)) {
-                String restaurantName = restaurant.getRestaurantName();
-                filteredRestaurants.add(restaurantName);
+                filteredRestaurants.add(restaurant);
             }
         }
         return filteredRestaurants;
     }
-    
+
     public void printRestaurantList(List<RestaurantModel> restaurantList) {
         for (RestaurantModel restaurant : restaurantList) {
             System.out.println(restaurant.getRestaurantName());
