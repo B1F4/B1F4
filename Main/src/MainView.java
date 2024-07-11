@@ -1,5 +1,14 @@
+import Order.OrderModel.OrderModel;
+import Order.OrderView;
+
+import java.util.HashMap;
+
 public class MainView {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        HashMap<Integer, OrderModel> Orderdb=new HashMap<>();
+        OrderView orderView=new OrderView(Orderdb);
     }
+
+
 }
