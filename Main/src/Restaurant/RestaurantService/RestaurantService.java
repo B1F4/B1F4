@@ -31,4 +31,15 @@ public class RestaurantService {
         }
         System.out.println(restaurantNames.toString().trim());
     }
+
+    public int findRestaurantIdByName(String restaurantName) {
+        int id = -1;
+        for (RestaurantModel restaurant : restaurantRepo.getRestaurantList()) {
+            if (restaurant.getRestaurantName().equalsIgnoreCase(restaurantName)) {
+                id = restaurant.getId();
+                break;
+            }
+        }
+        return id;
+    }
 }

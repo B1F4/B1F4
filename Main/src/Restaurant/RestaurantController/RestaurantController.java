@@ -19,4 +19,9 @@ public class RestaurantController {
         service.printRestaurantList(filteredRestaurants);
 
     }
+
+    public int getRestaurantId(String restaurantName) {
+        int id = service.findRestaurantIdByName(restaurantName);
+        return id;
+    }
 }
