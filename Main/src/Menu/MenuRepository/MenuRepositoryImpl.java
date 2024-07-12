@@ -27,6 +27,10 @@ public class MenuRepositoryImpl implements MenuRepository {
         save(new MenuModel(nextId++, 3, "마라떡볶이", 17000));
         save(new MenuModel(nextId++, 3, "로제떡볶이", 18000));
 
+        save(new MenuModel(nextId++, 4, "자금성 짜장", 10000));
+        save(new MenuModel(nextId++, 4, "자금성 짬뽕", 15000));
+        save(new MenuModel(nextId++, 4, "자금성 탕수육", 20000));
+
     }
 
 
