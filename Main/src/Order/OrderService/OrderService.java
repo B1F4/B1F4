@@ -1,4 +1,7 @@
 package Order.OrderService;
 
-public class OrderService {
+import java.util.ArrayList;
+
+public interface OrderService{
+    void save(ArrayList<String[]> orderdetails);
 }
