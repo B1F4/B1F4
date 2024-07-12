@@ -46,15 +46,4 @@ public class MenuModel {
     public void setPrice(int price) {
         this.price = price;
     }
-
-    //로깅용
-    @Override
-    public String toString() {
-        return "MenuModel{" +
-                "id=" + id +
-                ", storeId=" + storeId +
-                ", menuName='" + menuName + '\'' +
-                ", price=" + price +
-                '}';
-    }
 }

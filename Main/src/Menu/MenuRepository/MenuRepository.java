@@ -10,6 +10,7 @@ public interface MenuRepository {
     List<MenuModel> findAll();
     void deleteById(int id);
     boolean existsById(int id);
+    List<MenuModel> findByStoreId(int storeId);
 }
 
 
