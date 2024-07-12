@@ -1,8 +1,10 @@
 package Order;
 
 import Order.OrderController.OrderController;
+import Order.OrderController.OrderControllerImpl;
 import Order.OrderModel.OrderModel;
 import Order.OrderRepository.OrderRepository;
+import Order.OrderRepository.OrderRepositoryImpl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,14 +14,14 @@ public class OrderView  {
 
     public OrderView( HashMap<Integer, OrderModel> Orderdb) {
 
-        OrderController orderController=new OrderController();
-        OrderRepository orderRepository=new OrderRepository(Orderdb);
+        OrderController orderController=new OrderControllerImpl();
+        OrderRepository orderRepository=new OrderRepositoryImpl(Orderdb);
         Scanner sc=new Scanner(System.in);
         ArrayList<String[]> orderDetails=new ArrayList<>();
 
         while(true) {
 
-            System.out.println("주문 완료 및 종료:0,등록:1,삭제:2");
+            System.out.println("주문 완료 및 종료:0,등록:1,(전체)삭제:2");
             String select=sc.nextLine();
 
             if(select.equals("0")){

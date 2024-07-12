@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class OrderDelete {
-    public OrderDelete(OrderController orderController, HashMap<Integer, OrderModel> Orderdb, OrderRepository orderRepository,ArrayList<String[]> OrderDetails){
+    public OrderDelete(OrderController orderController, HashMap<Integer, OrderModel> Orderdb, OrderRepository orderRepository, ArrayList<String[]> OrderDetails){
         String DeleteResponse=orderController.deleteOrder(Orderdb,orderRepository);
         System.out.println(DeleteResponse+"\n");
     }
