@@ -25,8 +25,10 @@ public class RestaurantService {
     }
 
     public void printRestaurantList(List<RestaurantModel> restaurantList) {
+        StringBuilder restaurantNames = new StringBuilder();
         for (RestaurantModel restaurant : restaurantList) {
-            System.out.println(restaurant.getRestaurantName());
+            restaurantNames.append(restaurant.getRestaurantName()).append(" ");
         }
+        System.out.println(restaurantNames.toString().trim());
     }
 }
