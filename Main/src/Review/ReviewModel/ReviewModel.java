@@ -14,6 +14,18 @@ public class ReviewModel {
     private RestaurantModel restaurant; //-> restId
     private OrderModel order; // -> orderDetail
 
+    public void setOrder(OrderModel order) {
+        this.order = order;
+    }
+
+    public void setRestaurant(RestaurantModel restaurant) {
+        this.restaurant = restaurant;
+    }
+
+    public void setUser(UserModel user) {
+        this.user = user;
+    }
+
     public ReviewModel(int id, int rating, String comment) {
         this.reviewId = id;
         this.rating = rating;
