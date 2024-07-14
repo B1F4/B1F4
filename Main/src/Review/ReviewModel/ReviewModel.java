@@ -14,18 +14,10 @@ public class ReviewModel {
     private UserModel user; // -> userId, nickName
     private OrderModel order; // -> orderDetail
 
-    public void setOrder(OrderModel order) {
-        this.order = order;
-    }
-
-    public void setUser(UserModel user) {
-        this.user = user;
-    }
-
-    public ReviewModel(int id, int rating, String comment) {
+    public ReviewModel(int id, UserModel user, OrderModel order) {
         this.reviewId = id;
-        this.rating = rating;
-        this.comment = comment;
+        this.user = user;
+        this.order = order;
     }
 
     public int getId() {
@@ -34,5 +26,13 @@ public class ReviewModel {
 
     public void setId(int reviewId) {
         this.reviewId = reviewId;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 }
