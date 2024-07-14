@@ -170,8 +170,4 @@ public class UserView {
         }
         return loggedInUser;
     }
-
-    public static void main(String[] args) {
-        new UserView();
-    }
 }
