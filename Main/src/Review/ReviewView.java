@@ -16,6 +16,9 @@ public class ReviewView {
     }
 
     public void start(UserModel user, OrderModel order){
+        //User와 Order 정보를 ReviewController에 전달
+        reviewController.setUserAndOrder(user,order);
+
         while (true){
             //주문 완료 후 리뷰 등록
             System.out.println("리뷰를 등록하시겠습니까? (y/n)");

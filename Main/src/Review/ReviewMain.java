@@ -1,11 +1,13 @@
 package Review;
 
+import Order.OrderModel.OrderModel;
 import Review.ReviewController.ReviewController;
 import Review.ReviewController.ReviewControllerImpl;
 import Review.ReviewModel.ReviewModel;
 import Review.ReviewRepository.ReviewRepository;
 import Review.ReviewService.ReviewService;
 import Review.ReviewService.ReviewServiceImpl;
+import User.UserModel.UserModel;
 
 public class ReviewMain {
     public static void main(String[] args) {
@@ -21,6 +23,9 @@ public class ReviewMain {
         reviewView.setController(reviewController);
 
         //Start application
-        reviewView.start();
+        //테스트를 위한, 유저 정보와 주문 정보 임의 생성
+        UserModel user = new UserModel(0,"cr0036","1234","coldegg","부흥로 102");
+        OrderModel order = new OrderModel();
+        reviewView.start(user,order);
     }
 }

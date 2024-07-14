@@ -1,15 +1,25 @@
 package Review.ReviewController;
 
+import Order.OrderModel.OrderModel;
 import Review.ReviewService.ReviewService;
 import Review.ReviewView;
+import User.UserModel.UserModel;
 
 public class ReviewControllerImpl implements ReviewController{
     private ReviewService service;
     private ReviewView view;
+    private UserModel user;
+    private OrderModel order;
 
     public ReviewControllerImpl(ReviewService service, ReviewView view) {
         this.service = service;
         this.view = view;
+    }
+
+    @Override
+    public void setUserAndOrder(UserModel user, OrderModel order) {
+        this.user = user;
+        this.order =order;
     }
 
     @Override
