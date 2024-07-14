@@ -1,6 +1,8 @@
 package Review;
 
+import Order.OrderModel.OrderModel;
 import Review.ReviewController.ReviewController;
+import User.UserModel.UserModel;
 
 import java.util.Scanner;
 
@@ -13,7 +15,7 @@ public class ReviewView {
     this.sc = new Scanner(System.in);
     }
 
-    public void start(){
+    public void start(UserModel user, OrderModel order){
         while (true){
             //주문 완료 후 리뷰 등록
             System.out.println("리뷰를 등록하시겠습니까? (y/n)");

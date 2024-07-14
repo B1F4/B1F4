@@ -9,17 +9,13 @@ public class ReviewModel {
     private String comment;
     private int rating;
 
-    //User와 Restaurant 객체를 참조하여 foreign key 가져오기
+    //User와 Order 객체를 참조하여 foreign key 가져오기
+    //유저 정보, 주문한 가게와 메뉴가 존재해야 함.
     private UserModel user; // -> userId, nickName
-    private RestaurantModel restaurant; //-> restId
     private OrderModel order; // -> orderDetail
 
     public void setOrder(OrderModel order) {
         this.order = order;
-    }
-
-    public void setRestaurant(RestaurantModel restaurant) {
-        this.restaurant = restaurant;
     }
 
     public void setUser(UserModel user) {
