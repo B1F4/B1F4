@@ -1,5 +1,6 @@
 package User;
 
+import Restaurant.RestaurantView;
 import User.UserController.UserController;
 import User.UserModel.UserModel;
 
@@ -7,7 +8,7 @@ import java.util.Scanner;
 
 public class UserView {
 
-    private static final String WELCOME_MESSAGE = "        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
+    private static final String START_MESSAGE = "        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
             "⠀⠀⠈⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡸⢤⣡⣴⣶⣾⣿⣿⣷⣾⣥⡃⠀⠀⠀⠀⠀⠀⠀⠀⠀\n" +
             "⠀⠀⠀⠀⡙⠚⠀⠀⠀⠀⢀⣀⡀⠀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣠⣴⣶⣶⣶⣦⠀⠀\n" +
             "⠀⠀⠀⠠⣌⡁⠀⠀⢠⣾⣿⣿⣿⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀\n" +
@@ -48,7 +49,7 @@ public class UserView {
         userController = new UserController();
         sc = new Scanner(System.in);
         loggedInUser = null;
-        System.out.println(WELCOME_MESSAGE);
+        System.out.println(START_MESSAGE);
         run();
     }
 
@@ -109,7 +110,7 @@ public class UserView {
     }
 
     private static void handleOrder() {
-        System.out.println("주문하기");
+        new RestaurantView();
     }
 
     private static UserModel handleLogin(UserController userController, Scanner sc) {
