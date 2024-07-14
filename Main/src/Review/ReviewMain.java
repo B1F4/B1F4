@@ -27,7 +27,7 @@ public class ReviewMain {
         UserModel user = new UserModel(0,"cr0036","1234","coldegg","부흥로 102");
         OrderModel order = new OrderModel();
         reviewView.afterOrderDisplay(user,order); //리뷰 등록 -> 주문 후 화면에서 display
-        reviewView.userReviewsDisplay(user); //리뷰 출력 -> 유저 화면에서 display
+//        reviewView.userReviewsDisplay(user); //리뷰 관리 -> 유저 화면에서 display
 
     }
 }
