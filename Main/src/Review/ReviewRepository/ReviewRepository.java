@@ -19,12 +19,13 @@ public class ReviewRepository {
         db.put(review.getId(),review);
     }
 
-    //사용자가 작성한 Reviews 출력
+    //Reviews 출력
+    //사용자 id와 일치하는 review들을 새로운 리스트에 담아서 출력
     public List<ReviewModel> findReviewsByUser(UserModel user) {
         List<ReviewModel> userReviews = new ArrayList<>();
         for (Map.Entry<Integer, ReviewModel> entry : db.entrySet()) {
             ReviewModel review = entry.getValue();
-            if (review.getUser().getUserId() == user.getUserId()) {
+            if (review.getUser().getId() == user.getId()) {
                 userReviews.add(review);
             }
         }

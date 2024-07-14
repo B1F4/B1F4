@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ReviewServiceImpl implements ReviewService{
     private ReviewRepository reviewRepo;
-    private ReviewModel review;
+    private ReviewModel review = new ReviewModel(0);
 
     public ReviewServiceImpl(ReviewRepository reviewRepo) {
         this.reviewRepo = reviewRepo;
@@ -18,7 +18,8 @@ public class ReviewServiceImpl implements ReviewService{
 
     @Override
     public void setUserAndOrder(UserModel user, OrderModel order){
-        ReviewModel review = new ReviewModel(0, user, order);
+        review.setUser(user);
+        review.setOrder(order);
     }
 
     @Override
@@ -30,7 +31,7 @@ public class ReviewServiceImpl implements ReviewService{
 
     @Override
     public List<ReviewModel> getReviewsByUser(UserModel user) {
-        return List.of();
+        return reviewRepo.findReviewsByUser(user); //사용자 id와 일치하는 review가 담긴 reviews List
     }
 
 }

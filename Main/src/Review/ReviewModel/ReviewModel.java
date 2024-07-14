@@ -14,9 +14,15 @@ public class ReviewModel {
     private UserModel user; // -> userId, nickName
     private OrderModel order; // -> orderDetail
 
-    public ReviewModel(int id, UserModel user, OrderModel order) {
-        this.reviewId = id;
+    public ReviewModel(int reviewId) {
+        this.reviewId = reviewId;
+    }
+
+    public void setUser(UserModel user) {
         this.user = user;
+    }
+
+    public void setOrder(OrderModel order) {
         this.order = order;
     }
 
@@ -34,5 +40,21 @@ public class ReviewModel {
 
     public void setRating(int rating) {
         this.rating = rating;
+    }
+
+    public UserModel getUser() {
+        return user;
+    }
+
+    public OrderModel getOrder() {
+        return order;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public int getRating() {
+        return rating;
     }
 }
