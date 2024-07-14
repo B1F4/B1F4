@@ -56,15 +56,25 @@ public class ReviewView {
             System.out.println("작성한 리뷰가 없습니다.");
         } else {
             System.out.println("<작성한 리뷰 목록>");
-                        for (ReviewModel review : reviews) {
-                System.out.println("작성자: "+review.getUser().getNickname());
-//                !! Order에서 가게명, orderDetail 출력 메소드 추가해주세요.
-//                System.out.println("가게명: "+review.getOrder().getRestName());
-//                System.out.println("주문내역: "+review.getOrder().getOrdreDetail());
-                System.out.println("별점: "+review.getRating());
-                System.out.println("내용: "+review.getComment());
+                for (ReviewModel review : reviews) {
+                    System.out.println("리뷰id: "+review.getId());
+                    System.out.println("작성자: "+review.getUser().getNickname());
+    //                !! Order에서 가게명, orderDetail 출력 메소드 추가해주세요.
+    //                System.out.println("가게명: "+review.getOrder().getRestName());
+    //                System.out.println("주문내역: "+review.getOrder().getOrdreDetail());
+                    System.out.println("별점: "+review.getRating());
+                    System.out.println("내용: "+review.getComment());
             }
         }
         System.out.println("------------------------------");
+    }
+
+    // 4. 리뷰 삭제
+    public void deleteReviewDisplay(UserModel user) {
+        //작성한 리뷰들 먼저 보기
+        userReviewsDisplay(user);
+        System.out.println("삭제할 리뷰의 ID를 입력하세요: ");
+        int reviewId = sc.nextInt();
+        reviewController.deleteReview(reviewId);
     }
 }
