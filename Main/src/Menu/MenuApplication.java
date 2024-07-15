@@ -8,7 +8,7 @@ import Menu.MenuService.MenuServiceImpl;
 import Menu.MenuView.MenuView;
 
 public class MenuApplication {
-    public void MenuApplication() {
+    public MenuApplication() {
 //    public static void main(String[] args) {
         // 1. Repository 생성
         MenuRepository menuRepository = new MenuRepositoryImpl();
