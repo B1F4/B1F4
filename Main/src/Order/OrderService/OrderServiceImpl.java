@@ -7,22 +7,23 @@ import java.util.ArrayList;
 public class OrderServiceImpl implements OrderService{
     int id=1;
     OrderRepository orderRepository;
-    public OrderServiceImpl(OrderRepository orderRepository){
+    OrderModel orderModel;
+    public OrderServiceImpl(OrderRepository orderRepository,OrderModel orderModel){
         this.orderRepository=orderRepository;
+        this.orderModel=orderModel;
     }
-    public void save(ArrayList<String[]> orderdetails){
+    public void  save(ArrayList<String[]> orderdetails,String restaurantname){
 
-        OrderModel orderModel=new OrderModel();
+        orderModel.setRestaurantname(restaurantname);
         orderModel.setOrderdetail(orderdetails);
-        orderModel.setUsername();
-
         orderRepository.save(id,orderModel);
-
         id+=1;
+
 
     }
     public void deleteOrder(){
         orderRepository.delete();
         id=1;
     }
+
 }

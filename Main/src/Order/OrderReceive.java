@@ -8,8 +8,10 @@ public class OrderReceive {
 
     Scanner sc=new Scanner(System.in);
 
-    public OrderReceive(ArrayList<String[]> OrderDetails) {
+    public OrderReceive(ArrayList<String[]> OrderDetails,String Restarunt,String[] menus) {
         while (true) {
+            System.out.println("주문할 식당입니다."+Restarunt);
+            System.out.println("메뉴 입니다."+menus);
             System.out.println("주문은 메뉴,수량으로 결정됩니다. 주문해주세요! (주문 끝:0번)");
             String order = sc.nextLine();
             if (order.equals("0")) {

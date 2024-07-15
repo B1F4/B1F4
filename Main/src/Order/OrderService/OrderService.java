@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public interface OrderService{
 
-    void save(ArrayList<String[]> orderdetails);
+    void save(ArrayList<String[]> orderdetails,String restaurantname);
     void deleteOrder();
 
 }

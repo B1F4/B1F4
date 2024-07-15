@@ -2,9 +2,8 @@ package Order;
 
 import Order.OrderController.OrderController;
 import Order.OrderController.OrderControllerImpl;
-import Order.OrderModel.OrderModel;
-import Order.OrderRepository.OrderRepository;
-import Order.OrderRepository.OrderRepositoryImpl;
+import Restaurant.RestaurantController.RestaurantController;
+import Review.ReviewView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,31 +11,39 @@ import java.util.Scanner;
 
 public class OrderView  {
 
-    public OrderView( HashMap<Integer, OrderModel> Orderdb) {
+    public OrderView(String Restaurant,String[] menus) {
 
         OrderController orderController=new OrderControllerImpl();
-        OrderRepository orderRepository=new OrderRepositoryImpl(Orderdb);
+        HashMap<Integer,String> selectMap=new HashMap<>();
+        selectMap.put(0,"END");
+        selectMap.put(1,"RECEIVE");
+        selectMap.put(2,"DELETE");
         Scanner sc=new Scanner(System.in);
         ArrayList<String[]> orderDetails=new ArrayList<>();
+
+        new RestaurantController();
 
         while(true) {
 
             System.out.println("주문 완료 및 종료:0,등록:1,(전체)삭제:2");
-            String select=sc.nextLine();
+            int orderSelect=Integer.parseInt(sc.nextLine());
+            String controlOrder=selectMap.get(orderSelect);
 
-            if(select.equals("0")){
-                break;
+            if(controlOrder=="END"){
+              break;
             }
-            if(select.equals("1")) {
-                new OrderReceive(orderDetails);
+            if(controlOrder=="RECEIVE") {
+                new OrderReceive(orderDetails,Restaurant,menus);
             }
-            if(select.equals("2")){
+            if(controlOrder=="DELETE"){
                 orderDetails=new ArrayList<>();
-               new OrderDelete(orderController,Orderdb,orderRepository,orderDetails);
+               new OrderDelete(orderController);
             }
         }
 
-        String orderResponse=orderController.order(orderDetails,Orderdb,orderRepository);
+        String orderResponse=orderController.order(orderDetails,Restaurant);
         System.out.println(orderResponse);
+
+        new ReviewView();
     }
 }
