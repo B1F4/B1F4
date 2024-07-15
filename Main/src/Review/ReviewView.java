@@ -31,11 +31,11 @@ public class ReviewView {
             }
 
             reviewController.processInitialInput(choice, user, order);
-            userReviewsDisplay(user);
+//            userReviewsDisplay(user);
             printDbState();
         }   }
 
-    // 2. 리뷰 등록
+    // 1-2. 리뷰 등록
     public void addReview(UserModel user, OrderModel order){
         //리뷰 등록은 1)평점 2)코멘트 로 이루어집니다.
         System.out.println("주문하신 음식에 대한 별점을 등록해주세요. ");
@@ -53,42 +53,41 @@ public class ReviewView {
         System.out.println("리뷰가 등록되었습니다.");
     }
 
-    // 3. 작성한 리뷰들 보기
-    public void userReviewsDisplay(UserModel user) {
-        System.out.println("\n------------------------------");
-        System.out.println("------------------------------");
-        // 현재 로그인한 사용자의 리뷰들을 출력합니다.
-        List<ReviewModel> reviews = reviewController.getReviews(user);
-        if (reviews.isEmpty()) {
-            System.out.println("작성한 리뷰가 없습니다.");
-        } else {
-            System.out.println("<작성한 리뷰 목록>");
-                for (ReviewModel review : reviews) {
-                    System.out.println("리뷰id: "+review.getId());
-                    System.out.println("작성자: "+review.getUser().getNickname());
-    //                !! Order에서 가게명, orderDetail 출력 메소드 추가해주세요.
-    //                System.out.println("가게명: "+review.getOrder().getRestName());
-    //                System.out.println("주문내역: "+review.getOrder().getOrdreDetail());
-                    System.out.println("별점: "+review.getRating());
-                    System.out.println("내용: "+review.getComment());
-                    System.out.println("------------------------------");
-            }
-        }
-        System.out.println("------------------------------");
-        System.out.println("\n1. 리뷰 삭제하기");
-        System.out.println("2. 돌아가기");
-        int choice = sc.nextInt();
-        if (choice==1) {
-            System.out.println("삭제할 리뷰의 ID: ");
-            int reviewId = sc.nextInt();
-            System.out.println("해당 리뷰를 삭제하시겠습니까? (y/n)");
-            String choiceDel = sc.next();
-            sc.nextLine();
-            reviewController.deleteReview(choiceDel,reviewId);
-        }
-    }
+//    // 2. 작성한 리뷰들 보기
+//    public void userReviewsDisplay(UserModel user) {
+//        System.out.println("\n------------------------------");
+//        System.out.println("------------------------------");
+//        // 현재 로그인한 사용자의 리뷰들을 출력합니다.
+//        List<ReviewModel> reviews = reviewController.getReviews(user);
+//        if (reviews.isEmpty()) {
+//            System.out.println("작성한 리뷰가 없습니다.");
+//        } else {
+//            System.out.println("<작성한 리뷰 목록>");
+//                for (ReviewModel review : reviews) {
+//                    System.out.println("리뷰id: "+review.getId());
+//                    System.out.println("작성자: "+review.getUser().getNickname());
+//    //                !! Order에서 가게명, orderDetail 출력 메소드 추가해주세요.
+////                    System.out.println("가게명: "+review.getOrder().getRestName());
+////                    System.out.println("주문내역: "+review.getOrder().getOrdreDetail());
+//                    System.out.println("별점: "+review.getRating());
+//                    System.out.println("내용: "+review.getComment());
+//                    System.out.println("------------------------------");
+//            }
+//        }
+//        System.out.println("------------------------------");
+//        System.out.println("\n1. 리뷰 삭제하기");
+//        System.out.println("2. 돌아가기");
+//        int choice = sc.nextInt();
+//        if (choice==1) {
+//            System.out.println("삭제할 리뷰의 ID: ");
+//            int reviewId = sc.nextInt();
+//            System.out.println("해당 리뷰를 삭제하시겠습니까? (y/n)");
+//            String choiceDel = sc.next();
+//            sc.nextLine();
+//            reviewController.deleteReview(choiceDel,reviewId);
+//        }
+//    }
 
-    // DB 상태 출력
     public void printDbState() {
         reviewController.printAllReviews();
     }

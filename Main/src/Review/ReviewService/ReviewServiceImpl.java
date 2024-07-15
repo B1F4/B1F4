@@ -8,12 +8,8 @@ import User.UserModel.UserModel;
 import java.util.List;
 
 public class ReviewServiceImpl implements ReviewService{
-    private ReviewRepository reviewRepo;
     private ReviewModel review = new ReviewModel(0);
-
-    public ReviewServiceImpl(ReviewRepository reviewRepo) {
-        this.reviewRepo = reviewRepo;
-    }
+    private ReviewRepository reviewRepo = new ReviewRepository();
 
     @Override
     public void saveReview(UserModel user, OrderModel order, int rating, String comment){

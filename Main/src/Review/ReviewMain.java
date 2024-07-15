@@ -4,7 +4,6 @@ import Order.OrderModel.OrderModel;
 import Review.ReviewController.ReviewController;
 import Review.ReviewController.ReviewControllerImpl;
 import Review.ReviewModel.ReviewModel;
-import Review.ReviewRepository.ReviewRepository;
 import Review.ReviewService.ReviewService;
 import Review.ReviewService.ReviewServiceImpl;
 import User.UserModel.UserModel;
@@ -12,8 +11,7 @@ import User.UserModel.UserModel;
 public class ReviewMain {
     public static void main(String[] args) {
         //모델 초기화
-        ReviewRepository reviewRepo = new ReviewRepository();
-        ReviewService reviewService = new ReviewServiceImpl(reviewRepo);
+        ReviewService reviewService = new ReviewServiceImpl();
 
         //뷰 초기화
         ReviewView reviewView = new ReviewView();
