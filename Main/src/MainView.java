@@ -1,14 +1,12 @@
 import Order.OrderModel.OrderModel;
 import Order.OrderView;
+import Restaurant.RestaurantView;
+import User.UserView;
 
 import java.util.HashMap;
 
 public class MainView {
     public static void main(String[] args) {
-
-        HashMap<Integer, OrderModel> Orderdb=new HashMap<>();
-        OrderView orderView=new OrderView(Orderdb);
+        UserView userView=new UserView();
     }
-
-
 }
