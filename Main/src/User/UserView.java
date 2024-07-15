@@ -43,7 +43,7 @@ public class UserView {
 
     private UserController userController;
     private Scanner sc;
-    private UserModel loggedInUser;
+    private static UserModel loggedInUser;
 
     public UserView() {
         userController = new UserController();
@@ -110,7 +110,7 @@ public class UserView {
     }
 
     private static void handleOrder() {
-        new RestaurantView();
+        new RestaurantView(loggedInUser);
     }
 
     private static UserModel handleLogin(UserController userController, Scanner sc) {
