@@ -7,6 +7,6 @@ import java.util.HashMap;
 
 public class MainView {
     public static void main(String[] args) {
-        UserView userView=new UserView();
+        new UserView();
     }
 }

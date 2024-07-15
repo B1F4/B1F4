@@ -8,10 +8,9 @@ public class OrderReceive {
 
     Scanner sc=new Scanner(System.in);
 
-    public OrderReceive(ArrayList<String[]> OrderDetails,String Restarunt,String[] menus) {
+    public OrderReceive(ArrayList<String[]> OrderDetails,String restaurantName,String[] menus) {
         while (true) {
-            System.out.println("주문할 식당입니다."+Restarunt);
-            System.out.println("메뉴 입니다."+menus);
+            displayMenu(restaurantName,menus);
             System.out.println("주문은 메뉴,수량으로 결정됩니다. 주문해주세요! (주문 끝:0번)");
             String order = sc.nextLine();
             if (order.equals("0")) {
@@ -29,5 +28,13 @@ public class OrderReceive {
             System.out.println(Arrays.toString(orderdetail)+ "\n");
             OrderDetails.add(orderdetail);
         }
+    }
+
+    private void displayMenu(String restaurantName,String[] menus) {
+        System.out.println("\n===== " + restaurantName + " 메뉴 =====");
+        for (int i = 0; i < menus.length; i++) {
+            System.out.println((i + 1) + ". " + menus[i]);
+        }
+        System.out.println("========================");
     }
 }
