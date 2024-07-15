@@ -6,9 +6,10 @@ import Menu.MenuRepository.MenuRepositoryImpl;
 import Menu.MenuService.MenuService;
 import Menu.MenuService.MenuServiceImpl;
 import Menu.MenuView.MenuView;
+import User.UserModel.UserModel;
 
 public class MenuApplication {
-    public MenuApplication() {
+    public MenuApplication(UserModel loggedInUser) {
 //    public static void main(String[] args) {
         // 1. Repository 생성
         MenuRepository menuRepository = new MenuRepositoryImpl();
