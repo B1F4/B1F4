@@ -1,5 +1,6 @@
 package Restaurant;
 
+import Menu.MenuApplication;
 import Restaurant.RestaurantController.RestaurantController;
 import Restaurant.RestaurantModel.RestaurantModel;
 
@@ -35,7 +36,8 @@ public class RestaurantView {
                     } else {
                         System.out.println(restaurantName + "을(를) 선택하셨습니다.");
                         int id = restaurantController.getRestaurantId(restaurantName);
-                        System.out.println("가게 아이디" + id);
+                        System.out.println("가게 아이디는 " + id + "입니다");
+                        new MenuApplication();
                         break;
                     }
                 }
