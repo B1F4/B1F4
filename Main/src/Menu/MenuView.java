@@ -1,4 +1,4 @@
-package Menu.MenuView;
+package Menu;
 
 import Menu.MenuModel.MenuModel;
 import java.util.List;
