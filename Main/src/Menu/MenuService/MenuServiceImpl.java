@@ -2,6 +2,8 @@ package Menu.MenuService;
 
 import Menu.MenuModel.MenuModel;
 import Menu.MenuRepository.MenuRepository;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -48,5 +50,14 @@ public class MenuServiceImpl implements MenuService {
     @Override
     public List<MenuModel> getMenusByStoreId(int storeId) {
         return menuRepository.findByStoreId(storeId);
+    }
+
+    @Override
+    public ArrayList<String> changetypemethod(List<MenuModel> menus){
+        ArrayList<String> newchangemenus= new ArrayList<>();
+        for (MenuModel menu:menus){
+            newchangemenus.add(menu.getMenuName());
+        }
+        return newchangemenus;
     }
 }

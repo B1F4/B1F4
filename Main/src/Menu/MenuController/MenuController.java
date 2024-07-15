@@ -3,7 +3,9 @@ package Menu.MenuController;
 import Menu.MenuModel.MenuModel;
 import Menu.MenuService.MenuService;
 import Menu.MenuView.MenuView;
+import Order.OrderView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MenuController {
@@ -57,10 +59,13 @@ public class MenuController {
         }
     }
 
-    public void getMenusByStoreId() {
+    public ArrayList<String> getMenusByStoreId() {
         int storeId = menuView.getStoreIdInput();
         List<MenuModel> menus = menuService.getMenusByStoreId(storeId);
         menuView.displayMenusForStore(menus, storeId);
+        ArrayList<String> finalmenu=menuService.changetypemethod(menus);
+        return finalmenu;
+
     }
 
      public void processUserChoice(int choice) {
@@ -81,7 +86,8 @@ public class MenuController {
                 deleteMenu();
                 break;
             case 6:
-                getMenusByStoreId();
+                ArrayList<String> finalmenus=getMenusByStoreId();
+                new OrderView(finalmenus);
                 break;
                 case 7:
                 menuView.displayMessage("프로그램을 종료합니다.");

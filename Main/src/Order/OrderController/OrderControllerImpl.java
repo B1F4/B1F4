@@ -15,14 +15,14 @@ public class OrderControllerImpl implements OrderController {
     HashMap<Integer, OrderModel> Orderdb=new HashMap<>();
 
 
-    public String order(ArrayList<String[]> orderdetail,String restaurantname){
+    public String order(ArrayList<String[]> orderdetail){
 
         StringBuilder stringBuilder=new StringBuilder();
         OrderRepository orderRepository=new OrderRepositoryImpl(Orderdb);
         OrderModel orderModel=new OrderModel();
         OrderService orderService=new OrderServiceImpl(orderRepository,orderModel);
 
-        orderService.save(orderdetail,restaurantname);
+        orderService.save(orderdetail);
 
         return stringBuilder.append("주문이 완료되었습니다!").toString();
     }

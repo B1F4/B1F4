@@ -15,7 +15,7 @@ public class OrderView  {
 
 
 
-    public OrderView(String RestaurantName,String[] menus) {
+    public OrderView(ArrayList<String> menus) {
 
 
         OrderController orderController=new OrderControllerImpl();
@@ -26,7 +26,7 @@ public class OrderView  {
         Scanner sc=new Scanner(System.in);
         ArrayList<String[]> orderDetails=new ArrayList<>();
 
-         System.out.println("환영합니다! " + RestaurantName + "의 주문 시스템입니다.");
+         System.out.println("환영합니다!  주문 시스템입니다.");
 
         new RestaurantController();
 
@@ -40,7 +40,7 @@ public class OrderView  {
               break;
             }
             if(controlOrder=="RECEIVE") {
-                new OrderReceive(orderDetails,RestaurantName,menus);
+                new OrderReceive(orderDetails,menus);
             }
             if(controlOrder=="DELETE"){
                 orderDetails=new ArrayList<>();
@@ -48,7 +48,7 @@ public class OrderView  {
             }
         }
 
-        String orderResponse=orderController.order(orderDetails,RestaurantName);
+        String orderResponse=orderController.order(orderDetails);
         System.out.println(orderResponse);
 
         new ReviewView();

@@ -12,9 +12,8 @@ public class OrderServiceImpl implements OrderService{
         this.orderRepository=orderRepository;
         this.orderModel=orderModel;
     }
-    public void  save(ArrayList<String[]> orderdetails,String restaurantname){
+    public void  save(ArrayList<String[]> orderdetails){
 
-        orderModel.setRestaurantname(restaurantname);
         orderModel.setOrderdetail(orderdetails);
         orderRepository.save(id,orderModel);
         id+=1;
