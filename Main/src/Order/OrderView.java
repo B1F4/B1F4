@@ -51,7 +51,7 @@ public class OrderView  {
         String orderResponse=orderController.order(orderDetails);
         System.out.println(orderResponse);
 
-        new ReviewView();
+
     }
 
 }
