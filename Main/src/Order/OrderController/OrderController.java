@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 public interface OrderController {
 
-    String order(ArrayList<String[]> orderdetail,String restaurantname);
+    String order(ArrayList<String[]> orderdetail);
     String deleteOrder();
 
 }

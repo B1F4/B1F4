@@ -6,6 +6,7 @@ import Menu.MenuRepository.MenuRepositoryImpl;
 import Menu.MenuService.MenuService;
 import Menu.MenuService.MenuServiceImpl;
 import Menu.MenuView.MenuView;
+import Order.OrderView;
 import User.UserModel.UserModel;
 
 public class MenuApplication {

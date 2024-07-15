@@ -39,6 +39,7 @@ public class RestaurantView {
                         int id = restaurantController.getRestaurantId(restaurantName);
                         System.out.println("가게 아이디는 " + id + "입니다");
                         new MenuApplication(loggedInUser);
+
                         break;
                     }
                 }
